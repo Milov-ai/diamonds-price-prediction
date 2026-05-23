@@ -1,0 +1,83 @@
+{
+  "metricas": {
+    "Regresion Lineal": {
+      "R2": 0.91,
+      "MAE": 790.37,
+      "MSE": 1443338.78,
+      "RMSE": 1201.39
+    },
+    "Arbol de Decision": {
+      "R2": 0.9763,
+      "MAE": 332.84,
+      "MSE": 379610.91,
+      "RMSE": 616.13
+    },
+    "Random Forest": {
+      "R2": 0.9833,
+      "MAE": 262.86,
+      "MSE": 267851.71,
+      "RMSE": 517.54
+    }
+  },
+  "mejor_modelo": "Random Forest",
+  "importancia_features": {
+    "carat": 0.548,
+    "cut": 0.0016,
+    "color": 0.0324,
+    "clarity": 0.0633,
+    "depth": 0.0026,
+    "table": 0.0018,
+    "x": 0.0062,
+    "y": 0.3394,
+    "z": 0.0048
+  },
+  "feature_names": [
+    "carat",
+    "cut",
+    "color",
+    "clarity",
+    "depth",
+    "table",
+    "x",
+    "y",
+    "z"
+  ],
+  "ordinal_categories": {
+    "cut": [
+      "Fair",
+      "Good",
+      "Very Good",
+      "Premium",
+      "Ideal"
+    ],
+    "color": [
+      "J",
+      "I",
+      "H",
+      "G",
+      "F",
+      "E",
+      "D"
+    ],
+    "clarity": [
+      "I1",
+      "SI2",
+      "SI1",
+      "VS2",
+      "VS1",
+      "VVS2",
+      "VVS1",
+      "IF"
+    ]
+  },
+  "dataset_info": {
+    "total_original": 53940,
+    "total_limpio": 53920,
+    "registros_train": 43136,
+    "registros_test": 10784
+  },
+  "criterios_exito": {
+    "R2_umbral": 0.85,
+    "MAE_umbral": 800
+  }
+}

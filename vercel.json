@@ -1,0 +1,10 @@
+{
+  "installCommand": "pip install -r requirements.txt && npm install",
+  "buildCommand": "python model/train.py && npm run build",
+  "outputDirectory": "dist",
+  "functions": {
+    "api/*.py": {
+      "runtime": "@vercel/python@4.0"
+    }
+  }
+}
