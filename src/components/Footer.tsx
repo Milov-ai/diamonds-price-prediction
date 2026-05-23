@@ -22,7 +22,7 @@ export function Footer() {
         Institución Universitaria Pascual Bravo &bull; Medellín, Colombia &bull; 2026
       </p>
       <a
-        href="https://github.com/"
+        href="https://github.com/Milov-ai/diamonds-price-prediction"
         target="_blank"
         rel="noopener noreferrer"
         className="mt-4 inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs text-text-secondary transition-all hover:border-accent/30 hover:text-accent"
