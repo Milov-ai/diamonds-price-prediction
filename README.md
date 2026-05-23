@@ -6,7 +6,9 @@ Dashboard de predicción de precios de diamantes con Machine Learning.
 
 ## Demo
 
-🔗 **[Ver Dashboard en Vivo](https://diamonds-predictor.vercel.app)** *(actualizar con URL real)*
+🔗 **[Ver Dashboard en Vivo](https://diamonds-price-prediction-a8oa.vercel.app)**
+
+📦 **[Repositorio GitHub](https://github.com/Milov-ai/diamonds-price-prediction)**
 
 ## Arquitectura
 
