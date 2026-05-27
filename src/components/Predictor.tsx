@@ -47,8 +47,14 @@ export function Predictor() {
   const [z, setZ] = useState(3.5);
 
   const { price, loading, error, predict } = usePredict();
+  const [dimensionError, setDimensionError] = useState<string | null>(null);
 
   function handlePredict() {
+    if (x <= 0 || y <= 0 || z <= 0) {
+      setDimensionError("Las dimensiones x, y y z deben ser mayores que 0. Un diamante real no puede tener dimensiones nulas.");
+      return;
+    }
+    setDimensionError(null);
     predict({ carat, cut, color, clarity, depth, table, x, y, z });
   }
 
@@ -75,11 +81,17 @@ export function Predictor() {
             <NumberInput label="Mesa" value={table} onChange={setTable} step={0.5} min={43} max={95} unit="%" />
           </div>
 
-          <div className="mb-6 grid gap-4 sm:grid-cols-3">
-            <NumberInput label="Longitud (x)" value={x} onChange={setX} step={0.1} min={0} max={11} unit="mm" />
-            <NumberInput label="Ancho (y)" value={y} onChange={setY} step={0.1} min={0} max={60} unit="mm" />
-            <NumberInput label="Profundidad (z)" value={z} onChange={setZ} step={0.1} min={0} max={32} unit="mm" />
+          <div className="mb-2 grid gap-4 sm:grid-cols-3">
+            <NumberInput label="Longitud (x)" value={x} onChange={(v) => { setX(v); setDimensionError(null); }} step={0.1} min={0.1} max={11} unit="mm" />
+            <NumberInput label="Ancho (y)" value={y} onChange={(v) => { setY(v); setDimensionError(null); }} step={0.1} min={0.1} max={60} unit="mm" />
+            <NumberInput label="Profundidad (z)" value={z} onChange={(v) => { setZ(v); setDimensionError(null); }} step={0.1} min={0.1} max={32} unit="mm" />
           </div>
+
+          {dimensionError && (
+            <p className="mb-4 rounded-lg bg-danger/5 px-4 py-2.5 text-xs font-medium text-danger border border-danger/20">
+              ⚠ {dimensionError}
+            </p>
+          )}
 
           <button
             onClick={handlePredict}
